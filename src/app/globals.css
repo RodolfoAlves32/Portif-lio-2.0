@@ -21,7 +21,7 @@
 :root {
   --background: #ffffff;
   --foreground: #09090b;
-  --primary: #ef4444;
+  --primary: #2563eb;
   --primary-foreground: #ffffff;
   --muted: #f4f4f5;
   --muted-foreground: #71717a;
@@ -32,7 +32,7 @@
 .dark {
   --background: #050505;
   --foreground: #f8fafc;
-  --primary: #ef4444;
+  --primary: #3b82f6;
   --primary-foreground: #ffffff;
   --muted: #171717;
   --muted-foreground: #a1a1aa;

@@ -80,7 +80,7 @@ export function Certificates() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 key={cert.title}
                 onClick={() => setSelectedCert(cert)}
-                className="group relative flex flex-col glass rounded-3xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_20px_40px_-15px_rgba(239,68,68,0.1)] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background cursor-pointer"
+                className="group relative flex flex-col glass rounded-3xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.1)] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background cursor-pointer"
                 aria-label={`Visualizar certificado de ${cert.title}`}
               >
                 {/* Content Section */}
