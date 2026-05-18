@@ -83,16 +83,6 @@ export const siteData = {
     },
     {
       id: "2",
-      name: "Portfólio Developer",
-      description: "Portfólio pessoal dinâmico com animações, tema dark/light e design minimalista.",
-      tech: ["Next.js", "Framer Motion", "Tailwind"],
-      status: "Concluído",
-      image: "/images/project-portfolio.jpg",
-      github: "https://github.com/seu-usuario/portfolio",
-      demo: "#",
-    },
-    {
-      id: "3",
       name: "Cardápio Digital",
       description: "Site para restaurantes criarem cardápio online com QR Code.",
       tech: ["React", "TypeScript", "Tailwind"],
@@ -102,7 +92,7 @@ export const siteData = {
       demo: "#",
     },
     {
-      id: "4",
+      id: "3",
       name: "Gerador de Currículo",
       description: "Aplicação web para criar currículos profissionais e exportar em PDF.",
       tech: ["Next.js", "React", "CSS"],
@@ -112,7 +102,7 @@ export const siteData = {
       demo: "#",
     },
     {
-      id: "5",
+      id: "4",
       name: "Controle Financeiro",
       description: "Sistema simples para registrar receitas, despesas, metas e gráficos.",
       tech: ["React", "Node.js", "PostgreSQL"],
