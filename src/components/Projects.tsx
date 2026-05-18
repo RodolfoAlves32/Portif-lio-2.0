@@ -19,7 +19,7 @@ interface GitHubRepo {
 
 const getLogoData = (name: string, githubLink: string, demoLink: string) => {
   const lowerName = name.toLowerCase();
-  
+
   if (lowerName.includes('spotify')) return { url: 'https://api.iconify.design/simple-icons:spotify.svg', isLogo: true };
   if (lowerName.includes('covid')) return { url: 'https://api.iconify.design/simple-icons:python.svg', isLogo: true };
   if (lowerName.includes('streaming') || lowerName.includes('netflix')) return { url: 'https://api.iconify.design/simple-icons:netflix.svg', isLogo: true };
@@ -29,7 +29,7 @@ const getLogoData = (name: string, githubLink: string, demoLink: string) => {
   if (demoLink && demoLink !== "#" && demoLink !== "") {
     return { url: `https://api.microlink.io/?url=${encodeURIComponent(demoLink)}&screenshot=true&meta=false&embed=screenshot.url`, isLogo: false };
   }
-  
+
   return { url: `https://opengraph.githubassets.com/1/${githubLink.replace("https://github.com/", "")}`, isLogo: false };
 }
 
@@ -42,7 +42,7 @@ export function Projects() {
       try {
         const res = await fetch("/api/github/pinned");
         const data: GitHubRepo[] = await res.json();
-        
+
         if (Array.isArray(data)) {
           const formattedProjects = data
             .filter(repo => !repo.fork)
@@ -51,11 +51,11 @@ export function Projects() {
               name: repo.name.replace(/-/g, " "),
               description: repo.description || `Projeto focado em ${repo.language || "tecnologias web"}.`,
               tech: [repo.language, ...(repo.topics || [])].filter(Boolean).slice(0, 4),
-              status: "Publicado", 
+              status: "Publicado",
               github: repo.html_url,
               demo: repo.homepage || "#",
             }));
-            
+
           setProjects(formattedProjects);
         }
       } catch (error) {
@@ -64,7 +64,7 @@ export function Projects() {
         setLoading(false);
       }
     }
-    
+
     fetchProjects();
   }, []);
 
@@ -103,14 +103,13 @@ export function Projects() {
               >
                 <div className="relative h-48 md:h-64 w-full overflow-hidden bg-muted flex items-center justify-center">
                   <div className="absolute inset-0 opacity-20 group-hover:scale-105 transition-transform duration-700 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#374151_1px,transparent_1px)] [background-size:16px_16px]" />
-                  <img 
-                    src={getLogoData(project.name, project.github, project.demo).url} 
+                  <img
+                    src={getLogoData(project.name, project.github, project.demo).url}
                     alt={`Preview do repositório ${project.name}`}
-                    className={`w-full h-full z-10 transition-transform duration-500 drop-shadow-2xl ${
-                      getLogoData(project.name, project.github, project.demo).isLogo 
-                        ? 'object-contain group-hover:scale-110 p-12 md:p-16 dark:invert opacity-80' 
+                    className={`w-full h-full z-10 transition-transform duration-500 drop-shadow-2xl ${getLogoData(project.name, project.github, project.demo).isLogo
+                        ? 'object-contain group-hover:scale-110 p-12 md:p-16 dark:invert opacity-80'
                         : 'object-cover group-hover:scale-105 object-top absolute inset-0'
-                    }`}
+                      }`}
                     loading="lazy"
                   />
                 </div>
@@ -160,7 +159,7 @@ export function Projects() {
           )}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
